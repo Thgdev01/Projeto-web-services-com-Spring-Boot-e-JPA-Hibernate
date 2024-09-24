@@ -1,0 +1,9 @@
+package com.thgdev.projeto_java.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.thgdev.projeto_java.entities.User;
+
+public interface UserRepository extends JpaRepository<User, Long>{
+	
+}
