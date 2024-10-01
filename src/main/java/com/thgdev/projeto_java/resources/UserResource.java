@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.thgdev.projeto_java.entities.User;
 import com.thgdev.projeto_java.services.UserService;
 
-import jakarta.websocket.server.PathParam;
 
 @RestController
 @RequestMapping(value = "/users")
@@ -23,13 +22,13 @@ public class UserResource {
 	
 	@GetMapping
 	public ResponseEntity<List<User>> findAll(){
-		List<User> list = service.findAll();
-		return ResponseEntity.ok().body(list);
+		List<User> obj = service.findAll();
+		return ResponseEntity.ok().body(obj);
 	}
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<User> findById(@PathVariable Long id){
-		User userId = service.findById(id);
-		return ResponseEntity.ok().body(userId);
+		User obj = service.findById(id);
+		return ResponseEntity.ok().body(obj);
 	}
 }
